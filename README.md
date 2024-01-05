@@ -1,14 +1,26 @@
-# Welcome to your CDK TypeScript project
+# AWS Batch AWS CDK v2 - Typescript
 
-This is a blank project for CDK development with TypeScript.
+This project is an experiment that utilizes AWS CDK (Cloud Development Kit) to set up an AWS Batch infrastructure, enabling batch job execution using Docker containers.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Description
 
-## Useful commands
+The code provided in this repository creates an AWS CDK stack that configures the following components:
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+- **VPC (Virtual Private Cloud)**: Sets up a VPC with two availability zones to host the AWS Batch infrastructure.
+- **Security Group**: Configures a security group allowing outbound traffic.
+- **AWS IAM Roles**: Defines roles for instances, services, and instance profiles for the AWS Batch environment.
+- **Batch Compute Environment**: Establishes a managed compute environment defining the EC2 resources used by AWS Batch.
+- **Job Queue**: Creates a job queue to manage AWS Batch tasks.
+- **Job Definition**: Defines a container-type job using a public Docker image from Docker Hub.
+
+## Docker Image
+
+This project uses the public image `davsblg/docker-hello:latest`, available on Docker Hub, as the base for containers that will run as jobs in AWS Batch.
+
+In CloudWatch Logs, you should see a `Hello World` print.
+
+## Policies and Roles
+
+[!NOTE]
+
+Policies require review as there might be some unnecessary ones. Additional policies were added due to errors. Once thoroughly reviewed, I'll modify and remove the unnecessary ones.
