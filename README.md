@@ -21,6 +21,5 @@ In CloudWatch Logs, you should see a `Hello World` print.
 
 ## Policies and Roles
 
-[!NOTE]
-
-Policies require review as there might be some unnecessary ones. Additional policies were added due to errors. Once thoroughly reviewed, I'll modify and remove the unnecessary ones.
+> [!NOTE]
+> Policies require review as there might be some unnecessary ones. Additional policies were added due to errors. Once thoroughly reviewed, I'll modify and remove the unnecessary ones.
